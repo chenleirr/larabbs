@@ -39,9 +39,11 @@ Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit'
 //等同于以下结束=====================
 
 //话题
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
 
 //类别
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');

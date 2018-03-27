@@ -12,10 +12,10 @@
                 <div class="media-body">
 
                     <div class="media-heading">
-                        <a href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">
+                        <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
                             {{ $topic->title }}
                         </a>
-                        <a class="pull-right" href="{{ route('topics.show', [$topic->id]) }}" >
+                        <a class="pull-right" href="{{ $topic->link() }}" >
                             <span class="badge"> {{ $topic->reply_count }} </span>
                         </a>
                     </div>
@@ -23,11 +23,6 @@
                     <div class="media-body meta">
 
                         <a href="{{ route('categories.show', $topic->category->id) }}" title="{{ $topic->category->name }}">
-                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-                            {{ $topic->category->name }}
-                        </a>
-
-                        <a href="#" title="{{ $topic->category->name }}">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                             {{ $topic->category->name }}
                         </a>
